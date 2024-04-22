@@ -151,8 +151,9 @@ alias setproxy='export http_proxy="http://192.168.176.1:10811" && export https_p
 alias unsetproxy='unset http_proxy https_proxy'
 
 #color
-autoload colors
-colors
+ autoload -U colors && colors
+# autoload colors
+# colors
 
 for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
 eval _$color='%{$terminfo[bold]$fg[${(L)color}]%}'
